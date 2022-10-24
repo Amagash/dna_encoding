@@ -36,3 +36,10 @@ def str_to_binary(sentence):
         binary = binary + bin_char
     return binary
 
+
+def binary_to_str(binary):
+    sentence = ''
+    for i in range(0, len(binary), 8):
+        sentence += chr(int(binary[i:i+8], 2))
+    return sentence
+
