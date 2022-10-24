@@ -26,7 +26,6 @@ def binary_to_dna(binary):
     return dna
 
 
-
 def str_to_binary(sentence):
     binary = ''
     for char in sentence:
@@ -54,3 +53,11 @@ def dna_to_str(dna):
     binary = dna_to_binary(dna)
     sentence = binary_to_str(binary)
     return sentence
+
+
+if __name__ == '__main__':
+    sentence = "start"
+    dna = str_to_dna(sentence)
+    print(dna)
+    result = dna_to_str(dna)
+    print(result)
