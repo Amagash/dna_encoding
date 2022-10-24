@@ -43,3 +43,9 @@ def binary_to_str(binary):
         sentence += chr(int(binary[i:i+8], 2))
     return sentence
 
+
+def str_to_dna(sentence):
+    binary = str_to_binary(sentence)
+    dna = binary_to_dna(binary)
+    return dna
+
