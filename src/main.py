@@ -24,3 +24,15 @@ def binary_to_dna(binary):
         bits = binary[i:i+2]
         dna += cipher[bits]
     return dna
+
+
+
+def str_to_binary(sentence):
+    binary = ''
+    for char in sentence:
+        bin_char = format(ord(char), 'b')
+        if len(bin_char) < 8:
+            bin_char = ("0" * (8-len(bin_char))) + bin_char
+        binary = binary + bin_char
+    return binary
+
