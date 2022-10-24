@@ -49,3 +49,8 @@ def str_to_dna(sentence):
     dna = binary_to_dna(binary)
     return dna
 
+
+def dna_to_str(dna):
+    binary = dna_to_binary(dna)
+    sentence = binary_to_str(binary)
+    return sentence
