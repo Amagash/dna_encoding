@@ -6,7 +6,7 @@ def dna_to_binary(dna):
         'G': '10',
         'T': '11'
     }
-    for base in dna:
+    for base in dna.upper():
         binary += cipher[base]
     return binary
 
@@ -19,16 +19,8 @@ def binary_to_dna(binary):
         '10': 'G',
         '11': 'T'
     }
-    for i in range(len(binary)):
-        if i % 2 == 0:
-            bits = binary[i:i+2]
-            dna += cipher[bits]
-        i += 1
-    print(dna)
+
+    for i in range(0, len(binary), 2):
+        bits = binary[i:i+2]
+        dna += cipher[bits]
     return dna
-
-
-if __name__ == "__main__":
-    binary_in = "00011011"
-    dna = binary_to_dna(binary_in)
-    print(dna)
