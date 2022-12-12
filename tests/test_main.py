@@ -1,13 +1,19 @@
 from src.main import *
+from src.utils.conversion import Conversion
+
+
+def test_str_format():
+    assert str_format("aaaa        ") == "aAaA #&§_+^ "
 
 
 def test_dna_to_binary():
-    assert dna_to_binary("ATCG") == "00110110"
-    assert dna_to_binary("atcg") == "00110110"
+    conversion = Conversion("ATCG")
+    assert conversion.dna_to_binary() == "00110110"
 
 
 def test_binary_to_dna():
-    assert binary_to_dna("00110110") == "ATCG"
+    conversion = Conversion("ATCG")
+    assert conversion.binary_to_dna("00110110") == "ATCG"
 
 
 def test_str_to_binary():
