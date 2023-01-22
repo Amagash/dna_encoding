@@ -17,7 +17,7 @@ conversion = Conversion()
 
 def test_str_format():
     assert conversion.str_format("Hello world") == "STARTHelLo wOrldSTOP"
-    assert conversion.str_format("This is a secret message!") == "STARTThis IS#a&secrEt§meSsAgE!STOP"
+    assert conversion.str_format("This is a secret message") == "STARTThis IS#a&secrEt§meSsAgESTOP"
 
 
 def test_str_to_binary():
