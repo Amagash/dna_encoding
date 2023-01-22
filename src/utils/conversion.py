@@ -12,6 +12,19 @@ class Conversion:
         }
 
     def str_format(self, sentence):
+        '''
+        Returns the formatted sentence with the variations needed to avoid repeated patterns.
+
+            Parameters:
+                    sentence (str): The str sentence
+
+            Returns:
+                    encapsulated_formatted_sentence (str): The sentence with variations and encapsulated with "START" and "STOP"
+
+            Example:
+                    sentence = "hello world"
+                    returns "STARThelLo wOrld STOP"
+        '''
         formatted_sentence = ""
         count = {}
         for char in sentence:
@@ -31,9 +44,23 @@ class Conversion:
             else:
                 formatted_sentence += char
                 count[char] += 1
-        return "START" + formatted_sentence + "STOP"
+        encapsulated_formatted_sentence = "START" + formatted_sentence + "STOP"
+        return encapsulated_formatted_sentence
 
     def str_to_binary(self, sentence):
+        '''
+        Returns the binary sequence of a string.
+
+            Parameters:
+                    sentence (str): The str sentence
+
+            Returns:
+                    binary (str): The binary sequence of the variable sequence
+
+            Example:
+                    sentence = "hi"
+                    returns "0110100001101001"
+        '''
         binary = ''
         for char in sentence:
             bin_char = format(ord(char), 'b')
@@ -43,27 +70,77 @@ class Conversion:
         return binary
 
     def binary_to_dna(self, binary):
+        '''
+        Returns the dna sequence of a binary sequence.
+
+            Parameters:
+                    binary (str): The binary sequence
+
+            Returns:
+                    dna (str): The dna sequence of the variable binary
+
+            Example:
+                    binary = "0110100001101001"
+                    returns "CGGACGGC"
+        '''
         dna = ''
         for i in range(0, len(binary), 2):
             bits = binary[i:i+2]
             dna += self.cipher[bits]
         return dna
 
-
     def dna_to_binary(self, dna):
+        '''
+        Returns the binary sequence of a dna sequence.
+
+            Parameters:
+                    dna (str): The dna sequence
+
+            Returns:
+                    binary (str): The binary sequence of the variable dna
+
+            Example:
+                    dna = "CGGACGGC"
+                    returns "0110100001101001"
+        '''
         binary = ''
         for base in dna.upper():
             binary += self.cipher[base]
         return binary
-    
 
     def binary_to_str(self, binary):
+        '''
+        Returns the sentence of a binary sequence.
+
+            Parameters:
+                    binary (str): The binary sequence
+
+            Returns:
+                    sentence (str): The sentence of the variable binary
+
+            Example:
+                    binary = "0110100001101001"
+                    returns "hi"
+        '''
         sentence = ''
         for i in range(0, len(binary), 8):
             sentence += chr(int(binary[i:i+8], 2))
         return sentence
 
     def str_reverse(self, formatted_sentence):
+        '''
+        Returns the lower-cased sentence of a formatted sentence (e.g a sentence with the variations needed to avoid repeated patterns).
+
+            Parameters:
+                    formatted_sentence (str): The formatted sentence
+
+            Returns:
+                    reverse (str): The reverse of the variable formatted sentence
+
+            Example:
+                    formatted_sentence = "STARTThis IS#a&secrEt§meSsAgE!STOP"
+                    returns "this is a secret message!"
+        '''
         reversed_sentence = ""
         options = ["#", "&", "§", "_", "+", "^"]
         for char in formatted_sentence:
@@ -74,14 +151,39 @@ class Conversion:
         reversed_lower_sentence = reversed_sentence.lower()
         return reversed_lower_sentence[5:-4]
 
-
     def str_to_dna(self, message):
+        '''
+        Returns the dna sequence of a message.
+
+            Parameters:
+                    message (str): The message
+
+            Returns:
+                    dna (str): The dna sequence of the variable message
+
+            Example:
+                    message = "hi"
+                    returns "CCATCCCACAACCCAGCCCACGGACGGCCCATCCCACATTCCAA"
+        '''
         formatted_string = self.str_format(message)
         bin = self.str_to_binary(formatted_string)
         dna = self.binary_to_dna(bin)
         return dna
 
     def dna_to_str(self, dna):
+        '''
+        Returns the message contained in a dna sequence.
+
+            Parameters:
+                    dna (str): The dna sequence
+
+            Returns:
+                    message (str): The message of the variable dna
+
+            Example:
+                    dna = "CCATCCCACAACCCAGCCCACGGACGGCCCATCCCACATTCCAA"
+                    returns "hi"
+        '''
         reversed_bin = self.dna_to_binary(dna)
         reversed_formatted_string = self.binary_to_str(reversed_bin)
         reversed_string = self.str_reverse(reversed_formatted_string)
