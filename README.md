@@ -9,11 +9,11 @@ The first step is to find the secret message you want to encode in a DNA strand.
 2. Although upper-cased letters are accepted, the final message will be retrieved in lower-case meaning that acronyms might be less obvious.
 
 ### 2. Secret message => Formatted secret message
-Once you have your secret message there is a first step of message formatting. It is not possible to directly convert the sentence into binary because the DNA won't be synthesizable. Indeed, when encoding txt into DNA by directly transforming bits to ATCG, we end up with high GC content and repeated patterns. This makes sense because a sentence contains a lot of repeated characters (e.g spaces ' ' or frequent letters like 'e'). It is therefore necessary to add some randomness into the sentence. To bypass this issue, I alternate between lowercase and uppercase of the same letter and sequencially assign a special character to spaces (that is the reason why special characters are not allowed).
+Once you have your secret message there is a first step of message formatting. It is not possible to directly convert the sentence into binary because the DNA won't be synthesizable. Indeed, when encoding txt into DNA by directly transforming bits to ATCG, we end up with high GC content and repeated patterns. This makes sense because a sentence contains a lot of repeated characters (e.g spaces ' ' or frequent letters like 'e'). It is therefore necessary to add some randomness into the sentence. To bypass this issue, we alternate between lowercase and uppercase of the same letter and sequencially assign a special character to spaces (that is the reason why special characters are not allowed).
 
 The formatted sentence of `"This is a secret message"` becomes `"This IS#a&secrEt§meSsAgE"`.
 
-Also to make sure we now where the message starts and stops, I encapsulated the message between "START" and "STOP". Therefore the previous sentence `"This is a secret message"` actually becomes `"STARTThis IS#a&secrEt§meSsAgESTOP"`.
+Also to make sure we know where the message starts and stops, I encapsulated the message between "START" and "STOP". Therefore the previous sentence `"This is a secret message"` actually becomes `"STARTThis IS#a&secrEt§meSsAgESTOP"`.
 
 ### 3. Formatted secret message => Binary sequence 
 Once the message is formatted, we simply convert in into Binary so `"STARTThis IS#a&secrEt§meSsAgESTOP"` becomes `"010100110101010001000001010100100101010001010100011010000110100101110011001000000100100101010011001000110110000100100110011100110110010101100011011100100100010101110100101001110110110101100101010100110111001101000001011001110100010101010011010101000100111101010000"`.
