@@ -5,7 +5,7 @@ This project allows to convert a string into a DNA sequence and vice versa. This
 ⚠ Disclaimer: This project is just a POC and is not intended for research or production work. This project only as educational purposes.
 
 ## I. Conversion String to DNA
-### 1. Find a secret message
+### 1. Craft a secret message
 The first step is to find the secret message you want to encode in a DNA strand. There are some guidelines to follow:
 1. The message should only contains alphanumeric characters and spaces (e.i 0-9, a-z and A-Z), no special characters or punctuation allowed.
 2. Although upper-cased letters are accepted, the final message will be retrieved in lower-case meaning that acronyms might be less obvious.
