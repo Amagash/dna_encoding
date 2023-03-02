@@ -1,6 +1,6 @@
 # DNA ENCODING
 
-This project allows to convert a string into a DNA sequence and vice versa. This is to showcase the possibility of storing digital information inside a string of DNA.
+This project allows to convert a string into a DNA sequence and vice versa. This is to showcase the possibility of storing digital information inside a string of DNA. This project is just a POC and is not intended for research or production work. This project only as educational purposes.
 
 ## I. Conversion String to DNA
 ### 1. Find a secret message
