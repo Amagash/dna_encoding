@@ -18,7 +18,7 @@ The formatted sentence of `"This is a secret message"` becomes `"This IS#a&secrE
 Also to make sure we know where the message starts and stops, I encapsulated the message between "START" and "STOP". Therefore the previous sentence `"This is a secret message"` actually becomes `"STARTThis IS#a&secrEt§meSsAgESTOP"`.
 
 ### 3. Formatted secret message => Binary sequence 
-Once the message is formatted, we simply convert in into Binary so `"STARTThis IS#a&secrEt§meSsAgESTOP"` becomes `"010100110101010001000001010100100101010001010100011010000110100101110011001000000100100101010011001000110110000100100110011100110110010101100011011100100100010101110100101001110110110101100101010100110111001101000001011001110100010101010011010101000100111101010000"`.
+Once the message is formatted, we simply convert it into Binary so `"STARTThis IS#a&secrEt§meSsAgESTOP"` becomes `"010100110101010001000001010100100101010001010100011010000110100101110011001000000100100101010011001000110110000100100110011100110110010101100011011100100100010101110100101001110110110101100101010100110111001101000001011001110100010101010011010101000100111101010000"`.
 
 ### 4. Binary sequence => DNA Sequence
 For now, the conversion relies on naive bit encoding meaning :
