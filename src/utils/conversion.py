@@ -10,6 +10,42 @@ class Conversion:
         '10': 'G',
         '11': 'T'
         }
+    class Colors:
+        DBLUE = '\033[34m'
+        LBLUE = '\033[36m'
+        GREEN = '\033[32m'
+        YELLOW = '\033[33m'
+        RED = '\033[31m'
+        PURPLE = '\033[35m'
+        ENDC = '\033[0m'
+
+    def menu(self):
+        option = str(input(f"{self.Colors.LBLUE}Encrypt or decrypt ? (e/d): {self.Colors.ENDC}"))
+        match option:
+            case "e":
+                self.encrypt()
+            case "E":
+                self.encrypt()
+            case "d":
+                self.decrypt()
+            case "D":
+                self.decrypt()
+            case _:
+                print(f"{self.Colors.RED} => Please enter a valid option. (e/d){self.Colors.ENDC}")
+            
+        return option
+
+    def encrypt(self):
+        str_to_format = str(input(f"{self.Colors.LBLUE}Message to encrypt : {self.Colors.ENDC}"))
+        result = self.str_format(str_to_format)
+        format_to_binary = self.str_to_binary(result)
+        binary_to_dna = self.binary_to_dna(format_to_binary)
+        print(f"{self.Colors.LBLUE}Encrypted DNA sequence : {self.Colors.ENDC}{self.Colors.GREEN}{binary_to_dna}{self.Colors.ENDC}\n")
+
+    def decrypt(self):
+        dna = str(input(f"{self.Colors.LBLUE}DNA sequence to decrypt : {self.Colors.ENDC}"))
+        retrieved_message = self.dna_to_str(dna)
+        print(f"{self.Colors.LBLUE}Decrypted DNA sequence : {self.Colors.ENDC}{self.Colors.GREEN}{retrieved_message}{self.Colors.ENDC}\n")
 
     def str_format(self, sentence):
         '''

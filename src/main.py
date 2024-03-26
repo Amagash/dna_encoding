@@ -1,15 +1,8 @@
-from src.utils.conversion import Conversion
-
-
-def main():
-    conversion = Conversion()
-
-    dna = "CCATCCCACAACCCAGCCCACCCACGGACGGCCTATAGAACAGCCCATAGATCGACAGCGCTATCGCCCGATCTAGCACCCTCAGGCTCGTCCGCCCCATCTATCAACCGCTCACCAGACCCATCCCACATTCCAA"
-    retrieved_message = conversion.dna_to_str(dna)
-
-    print("The DNA sequence: " + dna) 
-    print("contains the secret message: " + retrieved_message)
-
+from utils.conversion import Conversion
+import os
 
 if __name__ == '__main__':
-    main()
+    conversion = Conversion()
+    os.system('cls')
+    while True:
+        conversion.menu()
