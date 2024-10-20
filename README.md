@@ -39,4 +39,4 @@ If you have a DNA strand containing a secret message and you want to read it, yo
 For this POC, we partnered with the Pasteur institute to use a [MinION](https://nanoporetech.com/products/minion). 
 The MinION reads the DNA and generates a file in the [FASTA format](minion_sequence.fasta) where it is possible to read the DNA sequence. From the DNA sequence it is possible to work backward from the conversion steps we saw above. 
 
-Have fun encoding your own secret messages into DNA strands :smiley:
+Have fun encoding your own secret messages into DNA strands :smiley: v rfvrvr
