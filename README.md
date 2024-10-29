@@ -4,6 +4,10 @@ This project allows to convert a string into a DNA sequence and vice versa. This
 
 ⚠ Disclaimer: This project is just a POC and is not intended for research or production work. This project only as educational purposes.
 
+## Quickstart
+1. Clone this project
+2. Run the main.py with your sequence to convert
+
 ## I. Conversion String to DNA
 ### 1. Craft a secret message
 The first step is to find the secret message you want to encode in a DNA strand. There are some guidelines to follow:
